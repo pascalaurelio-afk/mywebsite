@@ -51,9 +51,8 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <div
-          className={`transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8">
@@ -63,39 +62,35 @@ export function HeroSection() {
         </div>
 
         <h1
-          className={`text-5xl md:text-7xl font-bold tracking-tight mb-6 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-5xl md:text-7xl font-bold tracking-tight mb-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="block text-foreground">Pascal Marius Stefan</span>
           <span className="block gradient-text mt-2">Aurelio</span>
         </h1>
 
         <p
-          className={`text-xl md:text-2xl text-muted-foreground font-light mb-4 transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-xl md:text-2xl text-muted-foreground font-light mb-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           Procurement Specialist
         </p>
 
         <p
-          className={`max-w-2xl mx-auto text-base md:text-lg text-muted-foreground/80 mb-10 transition-all duration-700 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`max-w-2xl mx-auto text-base md:text-lg text-muted-foreground/80 mb-10 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           Results-driven procurement specialist with expertise in vendor management,
           inventory control, and technical procurement lifecycles.
         </p>
 
         <div
-          className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-[400ms] ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-[400ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <Button
             size="lg"
-            className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300"
+            className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
             onClick={() =>
               document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })
             }
@@ -105,7 +100,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-8 border-primary/30 hover:bg-primary/10 transition-all duration-300"
+            className="rounded-full px-8 border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
             onClick={() =>
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
             }

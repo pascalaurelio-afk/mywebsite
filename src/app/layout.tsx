@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Pascal Aurelio | Procurement Specialist",
@@ -34,8 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased dark`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col font-sans selection:bg-primary/30 selection:text-primary">
+    <html lang="en" className={`${outfit.variable} h-full antialiased dark`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans selection:bg-primary/30 selection:text-primary relative">
+        <div className="noise-overlay" />
         {children}
       </body>
     </html>

@@ -180,6 +180,14 @@
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid oklch(1 0 0 / 8%);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: oklch(0.18 0.02 270 / 65%);
+  border-color: oklch(1 0 0 / 15%);
+  box-shadow: 0 10px 30px -10px oklch(0 0 0 / 50%), 0 0 20px -5px var(--primary) / 10%;
+  transform: translateY(-2px);
 }
 
 .glass-strong {
@@ -232,4 +240,17 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.5 0.08 270);
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
