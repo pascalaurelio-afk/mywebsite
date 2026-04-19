@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import Image from "next/image";
 
 export function HeroSection() {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
@@ -49,64 +50,71 @@ export function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div
-          className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8">
-            <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">Open to Opportunities</span>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 grid lg:grid-cols-12 gap-12 items-center min-h-screen pt-20">
+        {/* Left Column - Typography & CTAs */}
+        <div className="lg:col-span-7 text-left flex flex-col items-start justify-center">
+          <div
+            className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 mb-8 backdrop-blur-sm shadow-[0_0_15px_rgba(var(--primary),0.1)]">
+              <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-semibold tracking-wide text-primary uppercase">Open to Opportunities</span>
+            </div>
+          </div>
+
+          <h1
+            className={`text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          >
+            <span className="block text-foreground drop-shadow-sm">Pascal</span>
+            <span className="block text-foreground drop-shadow-sm">Aurelio</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/40 mt-2">Specialist.</span>
+          </h1>
+
+          <p
+            className={`text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-xl transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          >
+            Results-driven procurement engineer bridging the gap between technical specifications and vendor realities.
+          </p>
+
+          <div
+            className={`flex flex-col sm:flex-row gap-5 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          >
+            <Button
+              size="lg"
+              className="rounded-xl px-8 h-14 text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_-5px_rgba(var(--primary),0.4)] hover:shadow-[0_0_40px_-5px_rgba(var(--primary),0.6)] hover:-translate-y-1 transition-all duration-300"
+              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              View Experience
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-xl px-8 h-14 text-base font-semibold border-primary/30 bg-background/50 backdrop-blur hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Get in Touch
+            </Button>
           </div>
         </div>
 
-        <h1
-          className={`text-5xl md:text-7xl font-bold tracking-tight mb-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
-          <span className="block text-foreground">Pascal Marius Stefan</span>
-          <span className="block gradient-text mt-2">Aurelio</span>
-        </h1>
+        {/* Right Column - 3D Illustration */}
+        <div className={`hidden lg:block lg:col-span-5 relative transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}`}>
+          <div className="relative w-full aspect-square max-w-[550px] mx-auto animate-float" style={{ animationDuration: '8s' }}>
+            {/* The Illustration */}
+            <div className="absolute inset-0 z-10 drop-shadow-[0_0_30px_rgba(var(--primary),0.2)]">
+              <Image
+                src="/images/hero-abstract.png"
+                alt="Procurement and Supply Chain Illustration"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
 
-        <p
-          className={`text-xl md:text-2xl text-muted-foreground font-light mb-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
-          Procurement Specialist
-        </p>
-
-        <p
-          className={`max-w-2xl mx-auto text-base md:text-lg text-muted-foreground/80 mb-10 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
-          Results-driven procurement specialist with expertise in vendor management,
-          inventory control, and technical procurement lifecycles.
-        </p>
-
-        <div
-          className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-[400ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-        >
-          <Button
-            size="lg"
-            className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
-            onClick={() =>
-              document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            View Experience
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full px-8 border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
-            onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Get in Touch
-          </Button>
+            {/* Accent Blur */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/20 blur-[100px] rounded-full z-0" />
+          </div>
         </div>
       </div>
 
