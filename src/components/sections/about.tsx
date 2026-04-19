@@ -60,7 +60,7 @@ export function AboutSection() {
         >
           <CardContent className="p-8 md:p-10">
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Results-driven procurement professional with a strong background in vendor management,
+              Results-driven procurement specialist with a strong background in vendor management,
               inventory control, and technical procurement lifecycles. Equipped with a{" "}
               <span className="text-foreground font-medium">Bachelor of Science in Civil Engineering</span>{" "}
               from the University of the Philippines and{" "}

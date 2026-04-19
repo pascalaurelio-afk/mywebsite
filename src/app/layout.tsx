@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Pascal Aurelio | Procurement Professional",
-  description: "Results-driven procurement professional with expertise in vendor management, inventory control, and technical procurement lifecycles. Bachelor of Science in Civil Engineering.",
+  title: "Pascal Aurelio | Procurement Specialist",
+  description: "Results-driven procurement specialist with expertise in vendor management, inventory control, and technical procurement lifecycles. Bachelor of Science in Civil Engineering.",
   openGraph: {
-    title: "Pascal Aurelio | Procurement Professional",
-    description: "Results-driven procurement professional with expertise in vendor management, inventory control, and technical procurement lifecycles.",
+    title: "Pascal Aurelio | Procurement Specialist",
+    description: "Results-driven procurement specialist with expertise in vendor management, inventory control, and technical procurement lifecycles.",
     url: "https://pascalaurelio.com",
     siteName: "Pascal Aurelio Portfolio",
     locale: "en_US",
