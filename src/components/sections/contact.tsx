@@ -11,19 +11,28 @@ export function ContactSection() {
   const { ref, isVisible } = useIntersectionObserver();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const formData = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(formData.get("subject") as string);
-    const body = encodeURIComponent(
-      `From: ${formData.get("name")} (${formData.get("email")})\n\n${formData.get("message")}`
-    );
     
-    setTimeout(() => {
-      window.location.href = `mailto:pascalaurelio@gmail.com?subject=${subject}&body=${body}`;
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const { submitInquiry } = await import("@/app/actions/contact");
+      const result = await submitInquiry(formData);
+      
+      if (result.error) {
+        alert(result.error);
+      } else {
+        alert("Thank you! Your inquiry has been sent successfully.");
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (
@@ -120,7 +129,7 @@ export function ContactSection() {
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground animate-spin" />
-                      <span>Opening Mail Client...</span>
+                      <span>Sending Message...</span>
                     </div>
                   ) : (
                     "Send Message"
